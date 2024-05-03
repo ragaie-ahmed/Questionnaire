@@ -34,7 +34,7 @@ class _ViewStandardsState extends State<ViewStandardQualityBody> {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return const QualityStandardPageOne();
+                    return  QualityStandardPageOne();
                   },
                 ));
               },

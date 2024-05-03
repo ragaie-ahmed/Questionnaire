@@ -1,6 +1,8 @@
 import 'package:doctor/Core/Util/Images.dart';
+import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
 import 'package:doctor/Features/Presentation/View/Auth/Widget/bodyLogIn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginScreenBody extends StatefulWidget {
   const LoginScreenBody({super.key});
@@ -10,11 +12,13 @@ class LoginScreenBody extends StatefulWidget {
 }
 
 class _LoginScreenBodyState extends State<LoginScreenBody> {
-  @override
-  bool data=false;
+  bool data = false;
+
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme
+          .of(context)
+          .primaryColor,
       body: Column(
         children: [
           const SizedBox(
@@ -30,11 +34,11 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
           const SizedBox(
             height: 90,
           ),
-           BodyLogIn(
-             value: data,
+          BodyLogIn(
+            value: data,
             changed: (value) {
               setState(() {
-                data=value;
+                data = value;
               });
             },
           ),

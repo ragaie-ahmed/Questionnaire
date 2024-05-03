@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextFormWithContainer extends StatelessWidget {
-  const CustomTextFormWithContainer({
+   CustomTextFormWithContainer({
+    this.textEditingController,
     this.maxLines = 1,
     super.key,
     required this.text,
@@ -12,6 +13,7 @@ class CustomTextFormWithContainer extends StatelessWidget {
   final String text;
   final int maxLines;
   final FontWeight fontWeight;
+  TextEditingController?textEditingController;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +51,7 @@ class CustomTextFormWithContainer extends StatelessWidget {
           ),
           child: TextFormField(
             maxLines: maxLines,
+            controller: textEditingController,
             cursorColor: Theme.of(context).primaryColor,
             decoration: InputDecoration(
               contentPadding: EdgeInsets.all(10.r),

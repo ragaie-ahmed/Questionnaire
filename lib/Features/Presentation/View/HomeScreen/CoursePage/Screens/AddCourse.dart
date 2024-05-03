@@ -17,16 +17,10 @@ class AddCourse extends StatelessWidget {
             SizedBox(height: 10.h,),
          const   AppBarCourses(),
             SizedBox(height: 30.h,),
-         const   ContentAddCourses(),
+            ContentAddCourses(),
             SizedBox(height: 8.h,),
 
-            SizedBox(
-              width: 296.38.w,
-              height: 50.h,
-              child: CustomButton(text:"Post", changed: () {
 
-              },),
-            )
         
           ],
         ),

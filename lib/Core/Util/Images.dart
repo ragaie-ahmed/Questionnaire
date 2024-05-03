@@ -24,4 +24,7 @@ class Images{
   static const String addReports="Assets/Images/AddReports.png";
   static const String viewReports="Assets/Images/ViewReports.png";
   static const String edit="Assets/Images/edit.png";
+  static const String imageAddStandard="Assets/Images/AddQualityStandard.png";
+  static const String addStandard="Assets/Images/addStandard.png";
+  static const String addImage="Assets/Images/addimage.png";
 }

@@ -54,7 +54,7 @@ class BodyForgetPassword extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                const CustomTextFormField(text: Strings.edu),
+                 CustomTextFormField(text: Strings.edu),
                  SizedBox(
                   height: 15.h
                   ,

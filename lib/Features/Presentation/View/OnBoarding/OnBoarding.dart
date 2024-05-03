@@ -6,6 +6,8 @@ class OnBoarding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OnboardingBody(key: key,);
+    return OnboardingBody(
+      key: key,
+    );
   }
 }

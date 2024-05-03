@@ -1,5 +1,6 @@
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
+import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/QualityStandard.dart';
 import 'package:doctor/Widget/CustomButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,7 +44,11 @@ class CardMainPage extends StatelessWidget {
                   height:29.h,
                   child: CustomButton(
                     text: Strings.letsGo,
-                    changed: () {},
+                    changed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                        return const QualityStandard();
+                      },));
+                    },
                   ),
                 )
               ],

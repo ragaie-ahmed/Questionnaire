@@ -22,7 +22,7 @@ class AppBarViewCourses extends StatelessWidget {
               color:colorIcon?? Theme.of(context).primaryColor,
             )),
         Text(
-          Strings.report,
+          Strings.courses,
           style: TextStyle(
               color:color?? Theme.of(context).primaryColor,
               fontWeight: FontWeight.bold,

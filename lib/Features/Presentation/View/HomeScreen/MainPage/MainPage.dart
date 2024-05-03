@@ -1,11 +1,26 @@
+import 'package:doctor/Core/Services/CacheHelper.dart';
+import 'package:doctor/Features/Presentation/Manager/AddReport/report_cubit.dart';
+import 'package:doctor/Features/Presentation/Manager/Courses/courses_cubit.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/MainPage/Screens/MainPageBody.dart';
 import 'package:flutter/material.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  @override
+  void initState() {
+    ReportCubit.get(context).getReportData(CacheHelper.getData(key: "id")??6);
+    CoursesCubit.get(context).getCoursesData(CacheHelper.getData(key: "idCourse")??6);
+
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    return const MainPageBody();
+    return MainPageBody();
   }
 }

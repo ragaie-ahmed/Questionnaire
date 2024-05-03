@@ -64,6 +64,7 @@ class Strings {
   static const String percent29 = "29%";
   static const String results = "Results";
   static const String addCourse = "Add Course";
+  static const String addStandard = "Add Standard";
   static const String profile = "Profile";
   static const String viewCourse = "View Course";
   static const String name = "Aya Mohamed Ahmed";
@@ -78,6 +79,10 @@ class Strings {
   static const String logOut = "Log out";
   static const String changeProfilePicture = "Change Profile Picture";
   static const String mail = "E-mail";
+  static const String addQuestionnaire = "Add a Questionnaire";
+  static const String manageCourse = "Manage Courses";
+  static const String manageReports = "Manage Reports";
+  static const String addAdvertisement = "Add Advertisement";
   static const String mohammed = "Mohamed";
   static const String finalInference = "Final Inference";
   static const String satisfactionRate = "Satisfaction rate :";
