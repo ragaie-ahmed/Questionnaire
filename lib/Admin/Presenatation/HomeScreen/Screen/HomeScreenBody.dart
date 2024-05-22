@@ -11,8 +11,7 @@ class HomeScreenAdmin extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    ManageCoursesCubit.get(context).getCourses();
-    ManageReportCubit.get(context).getCourses();
+
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body:const SafeArea(

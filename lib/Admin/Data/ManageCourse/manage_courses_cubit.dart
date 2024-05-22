@@ -15,7 +15,7 @@ class ManageCoursesCubit extends Cubit<ManageCoursesState> {
 
   static ManageCoursesCubit get(context) => BlocProvider.of(context);
 
-  void getCourses() async {
+  Future<void> getCourses() async {
     emit(LoadingManageCourse());
     try {
       final response = await http.get(
@@ -25,17 +25,12 @@ class ManageCoursesCubit extends Cubit<ManageCoursesState> {
           "Authorization": "Bearer ${AppConstant.token}",
         },
       );
-
       final responseBody = jsonDecode(response.body);
-
       List<CoursesModel> courses = responseBody['course']
           .map<CoursesModel>((name) => CoursesModel.fromJson(name))
           .toList();
-
-      print("Courses fetched: $courses");
       emit(SuccessManageCourse(coursesModel: courses));
     } catch (e) {
-      print("Error fetching courses: ${e.toString()}");
       emit(ErrorManageCourse(error: e.toString()));
     }
   }

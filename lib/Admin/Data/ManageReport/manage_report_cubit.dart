@@ -6,12 +6,15 @@ import 'package:doctor/Admin/Model/ShowReport.dart';
 import 'package:doctor/Core/Util/Const.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:http/http.dart'as http;
+import 'package:http/http.dart' as http;
+
 part 'manage_report_state.dart';
 
 class ManageReportCubit extends Cubit<ManageReportState> {
   ManageReportCubit() : super(ManageReportInitial());
-static ManageReportCubit get(context)=>BlocProvider.of(context);
+
+  static ManageReportCubit get(context) => BlocProvider.of(context);
+
   void getCourses() async {
     emit(ManageReportLoading());
     try {
@@ -22,13 +25,10 @@ static ManageReportCubit get(context)=>BlocProvider.of(context);
           "Authorization": "Bearer ${AppConstant.token}",
         },
       );
-
       final responseBody = jsonDecode(response.body);
-
       List<CoursesModel> courses = responseBody['report']
           .map<CoursesModel>((name) => CoursesModel.fromJson(name))
           .toList();
-
       print("Courses fetched: $courses");
       emit(ManageReportSuccess(coursesModel: courses));
     } catch (e) {

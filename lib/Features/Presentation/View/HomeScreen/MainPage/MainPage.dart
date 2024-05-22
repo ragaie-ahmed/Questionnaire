@@ -13,12 +13,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   @override
-  void initState() {
-    ReportCubit.get(context).getReportData(CacheHelper.getData(key: "id")??6);
-    CoursesCubit.get(context).getCoursesData(CacheHelper.getData(key: "idCourse")??6);
 
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return MainPageBody();

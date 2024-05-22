@@ -24,7 +24,7 @@ class ShowReportAdmin extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return  ContentViewReport(id:index,);
+                      return  ContentViewReport(id:index+1,);
                     },
                   ));
                 },

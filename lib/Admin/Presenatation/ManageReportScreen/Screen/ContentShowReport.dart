@@ -24,7 +24,7 @@ class ContentViewReport extends StatelessWidget {
                   height: 10.h,
                 ),
                 AppBarManageCourse(
-                  text: "Courses",
+                  text: "Report",
                   onTap: () {
                     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
                       builder: (context) {
@@ -42,14 +42,6 @@ class ContentViewReport extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 10.h,
-                ),
-                SizedBox(
-                  width: 296.38.w,
-                  height: 50.h,
-                  child: CustomButton(
-                    text: "Approve",
-                    changed: () {},
-                  ),
                 ),
               ],
             ),

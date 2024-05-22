@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +11,7 @@ class CustomTextFormField extends StatefulWidget {
   final IconData ?iconData;
   final bool ?obSecure;
   final void Function()? onChange;
+
   TextEditingController ?textEditingController;
   @override
   State<CustomTextFormField> createState() => _CustomTextFormFieldState();

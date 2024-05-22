@@ -52,19 +52,19 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                   children: [
                     currentIndex == pages.length - 1
                         ? SizedBox(
-                            width: 80.w,
-                          )
+                      width: 80.w,
+                    )
                         : SizedBox(
-                            width: 120.w,
-                          ),
+                      width: 120.w,
+                    ),
                     currentIndex == pages.length - 1
                         ? InkWell(
-                            onTap: () {
-                              pageController.animateTo(1,
-                                  duration: const Duration(microseconds: 500),
-                                  curve: Curves.ease);
-                            },
-                            child: Image.asset(Images.back))
+                        onTap: () {
+                          pageController.previousPage(
+                              duration: const Duration(microseconds: 500),
+                              curve: Curves.ease);
+                        },
+                        child: Image.asset(Images.back))
                         : const Text(""),
                     SizedBox(
                       width: 40.w,
@@ -77,14 +77,14 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                         onTap: () {
                           currentIndex == pages.length - 1
                               ? Navigator.pushAndRemoveUntil(context,
-                                  MaterialPageRoute(
-                                  builder: (context) {
-                                    return const LogInScreen();
-                                  },
-                                ), (route) => false)
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return const LogInScreen();
+                                },
+                              ), (route) => false)
                               : pageController.nextPage(
-                                  duration: const Duration(microseconds: 500),
-                                  curve: Curves.ease);
+                              duration: const Duration(microseconds: 500),
+                              curve: Curves.ease);
                         },
                         child: Image.asset(Images.next))
                   ],
@@ -96,21 +96,23 @@ class _OnboardingBodyState extends State<OnboardingBody> {
                   child: currentIndex == pages.length - 1
                       ? const Text("")
                       : InkWell(
-                          onTap: () {
-                            Navigator.pushAndRemoveUntil(context,
-                                MaterialPageRoute(
-                              builder: (context) {
-                                return const LogInScreen();
-                              },
-                            ), (route) => false);
-                          },
-                          child: Text(
-                              style: TextStyle(
-                                  fontSize: 20.sp,
-                                  fontWeight: FontWeight.bold,
-                                  color: Theme.of(context).primaryColor),
-                              Strings.skip),
-                        ),
+                    onTap: () {
+                      Navigator.pushAndRemoveUntil(context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const LogInScreen();
+                            },
+                          ), (route) => false);
+                    },
+                    child: Text(
+                        style: TextStyle(
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.bold,
+                            color: Theme
+                                .of(context)
+                                .primaryColor),
+                        Strings.skip),
+                  ),
                 ))
           ],
         ));

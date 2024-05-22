@@ -1,5 +1,5 @@
+import 'package:doctor/Admin/Presenatation/QualityStandard/Widget/QualityStandardAdmin.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/AppBarQualityStandard.dart';
-import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/QualityStandardContent.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -16,10 +16,10 @@ class _QualityStandardPageOneState extends State<ViewQualityStandardAdmin> {
 
   int currentIndex = 0;
   List<Widget> select = [
-    const QualityStandardContent(),
-    const QualityStandardContent(),
-    const QualityStandardContent(),
-    const QualityStandardContent(),
+     QualityStandardContent(),
+     QualityStandardContent(),
+     QualityStandardContent(),
+     QualityStandardContent(),
   ];
 
   @override

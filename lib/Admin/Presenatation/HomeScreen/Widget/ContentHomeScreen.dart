@@ -1,6 +1,7 @@
 import 'package:doctor/Admin/Presenatation/ManageCourse/Screens/ManageCourseScreen.dart';
 import 'package:doctor/Admin/Presenatation/ManageReportScreen/Screen/ManageReport.dart';
 import 'package:doctor/Admin/Presenatation/QualityStandard/View/QualityStandardAdmin.dart';
+import 'package:doctor/Admin/Presenatation/QuestionNaire/Screens/Quetionnair.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/CoursePage/Screens/Coursesone.dart';
@@ -23,7 +24,7 @@ class ContentHomeScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return const QuestionnaireBodyOne();
+                  return const AddQuestionNair();
                 },
               ));
             },

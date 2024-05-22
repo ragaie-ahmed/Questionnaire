@@ -13,7 +13,7 @@ part 'courses_state.dart';
 class CoursesCubit extends Cubit<CoursesState> {
   CoursesCubit() : super(CoursesInitial());
   static CoursesCubit get(context)=>BlocProvider.of(context);
-  void addCourses({
+  Future<void> addCourses({
     required String courseName,
     required String academic,
     required String desc,
@@ -54,7 +54,7 @@ class CoursesCubit extends Cubit<CoursesState> {
     }
   }
 
-  void getCoursesData(int id) async {
+  Future<void> getCoursesData(int id) async {
 
     try {
       http.Response response = await http.get(

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:doctor/Admin/Data/AddQuestionNaire/add_question_naire_cubit.dart';
 import 'package:doctor/Admin/Data/ManageCourse/manage_courses_cubit.dart';
 import 'package:doctor/Admin/Data/ManageReport/manage_report_cubit.dart';
 import 'package:doctor/Admin/Data/QualityStandard/qyality_standard_cubit.dart';
@@ -9,8 +10,10 @@ import 'package:doctor/Core/Util/Const.dart';
 import 'package:doctor/Features/Presentation/Manager/AddReport/report_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/Courses/courses_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
+import 'package:doctor/Features/Presentation/Manager/QualityStandard/quality_standard_cubit.dart';
 import 'package:doctor/Features/Presentation/View/Splash/Screen/Splash_Screen.dart';
 import 'package:doctor/Theme/light.dart';
+import 'package:doctor/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +28,6 @@ void main() async {
   AppConstant.token = CacheHelper.getData(key: "token");
   print("the token is ${AppConstant.token}");
   AppConstant.role = CacheHelper.getData(key: "role");
-
 
   runApp(const MyApp());
 }
@@ -47,14 +49,21 @@ class MyApp extends StatelessWidget {
           create: (context) => ManageReportCubit()..getCourses(),
         ),
         BlocProvider(
-          create: (context) => ReportCubit(),
+          create: (context) => ReportCubit()..getReportData(CacheHelper.getData(key: "idReport")??6),
         ),
         BlocProvider(
           create: (context) => QyalityStandardCubit(),
         ),
         BlocProvider(
-          create: (context) => CoursesCubit(),
+          create: (context) => QualityStandardCubit()..getQualityStandard(),
         ),
+        BlocProvider(
+          create: (context) => CoursesCubit()..getCoursesData(CacheHelper.getData(key: "idCourse")??6),
+        ),
+        BlocProvider(
+          create: (context) => AddQuestionNaireCubit()..percentage()
+        ),
+
       ],
       child: ScreenUtilInit(
         designSize: const Size(360, 640),
@@ -64,12 +73,11 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: light,
-            home: AppConstant.token != null
-                ? (AppConstant.role == "prof"
-                    ?  MainPage()
+            home: CacheHelper.getData(key: "token") != null
+                ? (CacheHelper.getData(key: "role") == "prof"
+                    ? const MainPage()
                     : const HomeScreenAdmin())
                 : const SplashScreen(),
-            // home: const HomeScreenAdmin(),
           );
         },
       ),

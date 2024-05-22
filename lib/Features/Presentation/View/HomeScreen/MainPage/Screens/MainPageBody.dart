@@ -13,7 +13,7 @@ class MainPageBody extends StatelessWidget {
   @override
 
   Widget build(BuildContext context) {
-    ReportCubit.get(context).getReportData(CacheHelper.getData(key: "id")??6);
+    ReportCubit.get(context).getReportData(CacheHelper.getData(key: "idReport")??6);
     CoursesCubit.get(context).getCoursesData(CacheHelper.getData(key: "idCourse")??6);
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,

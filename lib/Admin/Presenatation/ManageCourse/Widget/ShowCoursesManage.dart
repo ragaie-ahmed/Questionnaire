@@ -23,7 +23,7 @@ class ShowCourseManage extends StatelessWidget {
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(
                     builder: (context) {
-                      return  ContentViewCourse(id:index,);
+                      return  ContentViewCourse(id:index+1,);
                     },
                   ));
                 },

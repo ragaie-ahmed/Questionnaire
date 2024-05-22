@@ -44,7 +44,7 @@ class ReportCubit extends Cubit<ReportState> {
 
       var responseBody = jsonDecode(response.body);
       await CacheHelper.saveData(
-          key: "id", value: responseBody["report"]["id"]);
+          key: "idReport", value: responseBody["report"]["id"]);
       print("add Report $responseBody");
       emit(SuccessAddReport());
     } catch (e) {

@@ -8,12 +8,14 @@ class AddStandardNameQuestion extends StatelessWidget {
     required this.fontWeight,
     required this.textEditingController,
     required this.text,
+    required this.validate
 
   });
 String text;
   final int maxLines;
   final FontWeight fontWeight;
   TextEditingController? textEditingController;
+  String? Function(String?)? validate;
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,7 @@ String text;
         maxLines: maxLines,
         controller: textEditingController,
         cursorColor: Theme.of(context).primaryColor,
+        validator:validate ,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.all(10.r),
           hintStyle: TextStyle(
