@@ -1,9 +1,11 @@
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
+import 'package:doctor/Features/Presentation/Manager/QualityStandard/quality_standard_cubit.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Screens/QualityStandardPageOne.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/AppBarQualityStandard.dart';
 import 'package:doctor/Widget/ContainerCard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ViewStandardQualityBody extends StatefulWidget {
   const ViewStandardQualityBody({super.key});
@@ -31,7 +33,9 @@ class _ViewStandardsState extends State<ViewStandardQualityBody> {
               height: 20,
             ),
             InkWell(
-              onTap: () {
+              onTap: () async{
+                await BlocProvider.of<QualityStandardCubit>(context).getQualityStandard();
+
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
                     return  QualityStandardPageOne();

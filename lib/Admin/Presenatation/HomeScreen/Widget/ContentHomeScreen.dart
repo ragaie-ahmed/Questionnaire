@@ -1,3 +1,4 @@
+import 'package:doctor/Admin/Data/ManageCourse/manage_courses_cubit.dart';
 import 'package:doctor/Admin/Presenatation/ManageCourse/Screens/ManageCourseScreen.dart';
 import 'package:doctor/Admin/Presenatation/ManageReportScreen/Screen/ManageReport.dart';
 import 'package:doctor/Admin/Presenatation/QualityStandard/View/QualityStandardAdmin.dart';
@@ -11,6 +12,7 @@ import 'package:doctor/Features/Presentation/View/HomeScreen/ReportPage/Screens/
 import 'package:doctor/Features/Presentation/View/HomeScreen/SchedulePage/Screens/ScheduleOne.dart';
 import 'package:doctor/Widget/ContainerCard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ContentHomeScreen extends StatelessWidget {
   const ContentHomeScreen({super.key});
@@ -36,6 +38,7 @@ class ContentHomeScreen extends StatelessWidget {
           ),
           InkWell(
             onTap: () {
+              BlocProvider.of<ManageCoursesCubit>(context).getCourses();
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
                   return const ManageCourseScreen();

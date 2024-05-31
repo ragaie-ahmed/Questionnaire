@@ -35,7 +35,7 @@ class AddQuestionNaireCubit extends Cubit<AddQuestionNaireState> {
             "questions[]": question
           },
           headers: {
-            "Authorization": "Bearer ${AppConstant.token}",
+            "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
           });
       if (response.statusCode == 201) {
         var responseBod = jsonDecode(response.body);
@@ -65,7 +65,7 @@ class AddQuestionNaireCubit extends Cubit<AddQuestionNaireState> {
             "choices[]": answer
           },
           headers: {
-            "Authorization": "Bearer ${AppConstant.token}",
+            "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
           });
       if (response.statusCode == 201) {
         var responseBod = jsonDecode(response.body);
@@ -89,7 +89,7 @@ class AddQuestionNaireCubit extends Cubit<AddQuestionNaireState> {
           Uri.parse(
               "https://yeti-steady-starling.ngrok-free.app/api/quetionnair/admin/questions/${CacheHelper.getData(key: "idPercentage")}/percentages"),
           headers: {
-            "Authorization": "Bearer ${AppConstant.token}",
+            "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
           });
       if (response.statusCode == 200) {
         var responseBody = jsonDecode(response.body);

@@ -9,6 +9,10 @@ ThemeData light=ThemeData(
       bodyMedium:  TextStyle(color: Color(0xffA2A2A2)),
       bodySmall:  TextStyle(color: Color(0xff57649f)),
     ),
+    switchTheme: SwitchThemeData(
+      thumbColor: MaterialStateProperty.all(const Color(0xff57649f)),
+      trackColor: MaterialStateProperty.all(const Color(0xffD9E5FF)),
+    ),
     canvasColor: const Color(0xffFF2E00),
     colorScheme: const ColorScheme.light(
       background:  Color(0xff22DF11),

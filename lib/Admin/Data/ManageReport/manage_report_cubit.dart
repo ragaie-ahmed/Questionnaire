@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:doctor/Admin/Model/CoursesModel.dart';
 import 'package:doctor/Admin/Model/ShowReport.dart';
+import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Const.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
@@ -22,7 +23,7 @@ class ManageReportCubit extends Cubit<ManageReportState> {
         Uri.parse(
             "https://yeti-steady-starling.ngrok-free.app/api/admin/reports"),
         headers: {
-          "Authorization": "Bearer ${AppConstant.token}",
+          "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
         },
       );
       final responseBody = jsonDecode(response.body);
@@ -44,7 +45,7 @@ class ManageReportCubit extends Cubit<ManageReportState> {
         Uri.parse(
             "https://yeti-steady-starling.ngrok-free.app/api/admin/showReport/$id"),
         headers: {
-          "Authorization": "Bearer ${AppConstant.token}",
+          "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
         },
       );
       var jsonBody = jsonDecode(response.body);

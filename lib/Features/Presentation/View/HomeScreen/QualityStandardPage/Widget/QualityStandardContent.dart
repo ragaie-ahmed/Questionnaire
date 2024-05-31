@@ -20,36 +20,38 @@ final String image;
       decoration: BoxDecoration(color: Theme.of(context).primaryColor,
       borderRadius: BorderRadius.circular(20.r)
       ),
-      child: Column(
-        children: [
-          SizedBox(height: 10.h,),
-
-          Container(
-            height: 45.h,
-            width: 274.42.w,
-            decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
-               borderRadius: BorderRadius.circular(20.r),
-                border:
-                    Border.all(color: Theme.of(context).colorScheme.primary)),
-            child: Center(
-                child: Text(
-              data1,
-              style: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold),
-            )),
-          ),
-          SizedBox(height: 15.h,),
-          Image.file(File(image),height: 234.42.h,width: 274.42.w,fit: BoxFit.fill,),
-          SizedBox(height: 10.h,),
-
-          Padding(
-            padding: const EdgeInsets.only(top: 18,left: 10),
-            child: Text(data2,style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 18.sp),),
-          )
-        ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 10.h,),
+        
+            Container(
+              height: 45.h,
+              width: 274.42.w,
+              decoration: BoxDecoration(
+                  color: Theme.of(context).primaryColor,
+                 borderRadius: BorderRadius.circular(20.r),
+                  border:
+                      Border.all(color: Theme.of(context).colorScheme.primary)),
+              child: Center(
+                  child: Text(
+                data1,
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold),
+              )),
+            ),
+            SizedBox(height: 15.h,),
+            Image.network(image,height: 234.42.h,width: 274.42.w,fit: BoxFit.fill,),
+            SizedBox(height: 10.h,),
+        
+            Padding(
+              padding: const EdgeInsets.only(top: 18,left: 10),
+              child: Text(data2,style: TextStyle(color: Theme.of(context).colorScheme.primary,fontSize: 18.sp),),
+            )
+          ],
+        ),
       ),
     );
   }

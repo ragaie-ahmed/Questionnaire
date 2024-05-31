@@ -47,7 +47,10 @@ class _QualityStandardPageOneState extends State<QualityStandardPageOne> {
                           height: 30.h,
                         ),
                         QualityStandardContent(
-                          image: "/data/user/0/com.example.doctor/cache/66745aef-afe6-4bdc-9836-3664e3b99763/1000000033.jpg",                          data1: state.qualityStandard[index].name.toString(),
+                          image:
+                          "${AppConstant.baseImage}${state
+                              .qualityStandard[index].image}",
+                          data1: state.qualityStandard[index].name.toString(),
                           data2: state.qualityStandard[index].description
                               .toString(),
                         )
@@ -62,43 +65,68 @@ class _QualityStandardPageOneState extends State<QualityStandardPageOne> {
                       children: [
                         currentIndex == 0
                             ? const SizedBox(
-                                width: 10,
-                              )
+                          width: 10,
+                        )
                             : InkWell(
-                                onTap: () {
-                                  pageController.previousPage(
-                                      duration: const Duration(seconds: 1),
-                                      curve: Curves.linear);
-                                },
-                                child: Image.asset(
-                                  "Assets/Images/back.png",
-                                  color: Theme.of(context).primaryColor,
-                                )),
+                            onTap: () {
+                              pageController.previousPage(
+                                  duration: const Duration(seconds: 1),
+                                  curve: Curves.linear);
+                            },
+                            child: Image.asset(
+                              "Assets/Images/back.png",
+                              color: Theme
+                                  .of(context)
+                                  .primaryColor,
+                            )),
                         SizedBox(
                           width: 10.w,
                         ),
                         SmoothPageIndicator(
-                            controller: pageController, count: 2),
+                          effect: SlideEffect(
+                              spacing: 8.0,
+                              radius: 15.0.r,
+                              dotWidth: 18.0.w,
+                              dotHeight: 18.0.h,
+                              paintStyle: PaintingStyle.stroke,
+                              strokeWidth: 1.5.w,
+
+                              dotColor: Theme
+                                  .of(context)
+                                  .colorScheme
+                                  .primary,
+
+                              activeDotColor: Theme
+                                  .of(context)
+                                  .colorScheme
+                                  .primary
+
+                          ),
+                          controller: pageController, count: 2,),
                         SizedBox(
                           width: 10.w,
                         ),
                         currentIndex == state.qualityStandard.length - 1
                             ? InkWell(
-                                onTap: () {},
-                                child: Image.asset(
-                                  "Assets/Images/true.png",
-                                  color: Theme.of(context).primaryColor,
-                                ))
+                            onTap: () {},
+                            child: Image.asset(
+                              "Assets/Images/true.png",
+                              color: Theme
+                                  .of(context)
+                                  .primaryColor,
+                            ))
                             : InkWell(
-                                onTap: () {
-                                  pageController.nextPage(
-                                      duration: const Duration(seconds: 1),
-                                      curve: Curves.linear);
-                                },
-                                child: Image.asset(
-                                  "Assets/Images/next.png",
-                                  color: Theme.of(context).primaryColor,
-                                )),
+                            onTap: () {
+                              pageController.nextPage(
+                                  duration: const Duration(seconds: 1),
+                                  curve: Curves.linear);
+                            },
+                            child: Image.asset(
+                              "Assets/Images/next.png",
+                              color: Theme
+                                  .of(context)
+                                  .primaryColor,
+                            )),
                       ],
                     )),
                 const Positioned(

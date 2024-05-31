@@ -25,79 +25,81 @@ class AddQuestion extends StatelessWidget {
         builder: (context, state) {
           var cubit = AddQuestionNaireCubit.get(context);
           return SafeArea(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 25.h,
-                ),
-                AppBarQualityStandard(
-                  color: Theme.of(context).primaryColor,
-                  colorIcon: Theme.of(context).primaryColor,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(20.0.r),
-                  child: TextFormField(
-                    maxLines: 5,
-                    controller: cubit.questionController,
-                    cursorColor: Theme.of(context).primaryColor,
-                    decoration: InputDecoration(
-                      hintText: "Write here...",
-                      hintStyle: TextStyle(fontSize: 14.sp),
-                      errorBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.r),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).canvasColor,
-                            strokeAlign: 2),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.r),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                            strokeAlign: 20,
-                            width: 2.w),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20.r),
-                        borderSide: BorderSide(
-                            color: Theme.of(context).primaryColor,
-                            strokeAlign: 20,
-                            width: 2.w),
-                      ),
-                      border: OutlineInputBorder(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  AppBarQualityStandard(
+                    color: Theme.of(context).primaryColor,
+                    colorIcon: Theme.of(context).primaryColor,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(20.0.r),
+                    child: TextFormField(
+                      maxLines: 5,
+                      controller: cubit.questionController,
+                      cursorColor: Theme.of(context).primaryColor,
+                      decoration: InputDecoration(
+                        hintText: "Write here...",
+                        hintStyle: TextStyle(fontSize: 14.sp),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.r),
                           borderSide: BorderSide(
-                              color: Theme.of(context).primaryColor)),
+                              color: Theme.of(context).canvasColor,
+                              strokeAlign: 2),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.r),
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                              strokeAlign: 20,
+                              width: 2.w),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20.r),
+                          borderSide: BorderSide(
+                              color: Theme.of(context).primaryColor,
+                              strokeAlign: 20,
+                              width: 2.w),
+                        ),
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Theme.of(context).primaryColor)),
+                      ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20, right: 20),
-                  child: CustomButton(
-                    text: "Add Question",
-                    changed: () {
-                      AddQuestionNaireCubit.get(context)
-                          .addQuestion(question: cubit.questionController.text);
-                      cubit.questionController.clear();
-                    },
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: CustomButton(
+                      text: "Add Question",
+                      changed: () {
+                        AddQuestionNaireCubit.get(context)
+                            .addQuestion(question: cubit.questionController.text);
+                        cubit.questionController.clear();
+                      },
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(20),
-                  child: CustomButton(
-                    text: "Add Answers",
-                    alignment: Alignment.topCenter,
-                    changed: () {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return const AddAnswers();
-                        },
-                      ));
-                    },
+                  SizedBox(
+                    height: 10.h,
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: EdgeInsets.all(20),
+                    child: CustomButton(
+                      text: "Add Answers",
+                      alignment: Alignment.topCenter,
+                      changed: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return const AddAnswers();
+                          },
+                        ));
+                      },
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
         },

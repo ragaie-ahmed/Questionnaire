@@ -69,7 +69,26 @@ class _QualityStandardPageOneState extends State<ViewQualityStandardAdmin> {
                   SizedBox(
                     width: 10.w,
                   ),
-                  SmoothPageIndicator(controller: pageController, count: 2),
+                  SmoothPageIndicator(controller: pageController, count: 2,                          effect: SlideEffect(
+                      spacing: 8.0,
+                      radius: 15.0.r,
+                      dotWidth: 18.0.w,
+                      dotHeight: 18.0.h,
+                      paintStyle: PaintingStyle.stroke,
+                      strokeWidth: 1.5.w,
+
+                      dotColor: Theme
+                          .of(context)
+                          .colorScheme
+                          .primary,
+
+                      activeDotColor: Theme
+                          .of(context)
+                          .colorScheme
+                          .primary
+
+                  ),
+                  ),
                   SizedBox(
                     width: 10.w,
                   ),

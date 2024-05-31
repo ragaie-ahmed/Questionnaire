@@ -25,15 +25,16 @@ class BodyLogIn extends StatelessWidget {
     return BlocConsumer<LogInCubit, LogInState>(
       listener: (context, state) {
         if (state is SuccessLogIn) {
-         CacheHelper.getData(key: "role")=="prof"? Navigator.push(context, MaterialPageRoute(
+         CacheHelper.getData(key: "role")=="prof"? Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
            builder: (context) {
              return const MainPage();
            },
-         )):Navigator.push(context, MaterialPageRoute(
+         ),(route) => false,):Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
            builder: (context) {
              return const HomeScreenAdmin();
            },
-         ));
+         ),(route) => false,);
+
         } else if (state is ErrorLogIn) {
 
            ScaffoldMessenger.of(context).showSnackBar(SnackBar(backgroundColor: Colors.red,content: Text(state.error)));

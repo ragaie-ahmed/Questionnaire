@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Const.dart';
 import 'package:doctor/Features/Data/Model/QualityStandard.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -11,14 +12,14 @@ part 'quality_standard_state.dart';
 class QualityStandardCubit extends Cubit<QualityStandardState> {
   QualityStandardCubit() : super(QualityStandardInitial());
   static QualityStandardCubit get(context)=>BlocProvider.of(context);
-  void getQualityStandard()async{
+  Future<void> getQualityStandard()async{
     emit(QualityStandardLoading());
     try {
       http.Response response = await http.get(
           Uri.parse(
               "${AppConstant.baseUrl}/prof/standards"),
           headers: {
-            "Authorization": "Bearer ${AppConstant.token}",
+            "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
           });
       if (response.statusCode == 200) {
         var jsonBody = jsonDecode(response.body);

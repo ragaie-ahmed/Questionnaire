@@ -31,9 +31,10 @@ class _OnboardingBodyState extends State<OnboardingBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+appBar: AppBar(),
         body: Stack(
           children: [
+
             PageView.builder(
               onPageChanged: (value) {
                 setState(() {

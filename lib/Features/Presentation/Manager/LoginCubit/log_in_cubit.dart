@@ -28,6 +28,7 @@ class LogInCubit extends Cubit<LogInState> {
         var responseBody = jsonDecode(response.body);
         await CacheHelper.saveData(key: "token", value: responseBody["Token"]);
         await CacheHelper.saveData(key: "role", value: responseBody["role"]);
+        print(CacheHelper.getData(key: "token"));
 
         emit(SuccessLogIn());
       }

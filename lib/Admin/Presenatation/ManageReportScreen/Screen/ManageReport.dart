@@ -1,3 +1,4 @@
+import 'package:doctor/Admin/Data/ManageReport/manage_report_cubit.dart';
 import 'package:doctor/Admin/Presenatation/ManageCourse/Widget/AppBarCourse.dart';
 import 'package:doctor/Admin/Presenatation/ManageCourse/Widget/ShowCoursesManage.dart';
 import 'package:doctor/Admin/Presenatation/ManageReportScreen/Widget/ShowReportAdmin.dart';
@@ -9,6 +10,7 @@ class ManageReportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ManageReportCubit.get(context).getCourses();
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:doctor/Core/Services/ApiServices.dart';
+import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Const.dart';
 import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
@@ -27,7 +28,7 @@ class StandardAdminCubit extends Cubit<StandardAdminState> {
       request.fields['child_id'] = desc;
       request.files.add(image);
       request.headers.addAll({
-        "Authorization": "Bearer ${AppConstant.token}",
+        "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
       });
       var streamedResponse = await request.send();
       var response = await http.Response.fromStream(streamedResponse);

@@ -33,7 +33,7 @@ class CoursesCubit extends Cubit<CoursesState> {
       });
       int contentLength = utf8.encode(requestBody).length;
       Map<String, String> headers = {
-        "Authorization": "Bearer ${AppConstant.token}",
+        "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
         "Content-Length": contentLength.toString(),
         "Content-Type": "application/json"
       };
@@ -61,7 +61,7 @@ class CoursesCubit extends Cubit<CoursesState> {
           Uri.parse(
               "https://yeti-steady-starling.ngrok-free.app/api/prof/showCourse/$id"),
           headers: {
-            "Authorization": "Bearer ${AppConstant.token}",
+            "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
           });
       if (response.statusCode == 200) {
         var jsonBody = jsonDecode(response.body);

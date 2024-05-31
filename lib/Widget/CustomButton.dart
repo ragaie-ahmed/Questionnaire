@@ -29,7 +29,7 @@ class CustomButton extends StatelessWidget {
 
       child: Align(
 
-          alignment:alignment??Alignment.topCenter,
+          alignment:alignment??Alignment.center,
           child: Text(text, style: TextStyle(color: colorText ?? Theme
               .of(context)
               .colorScheme

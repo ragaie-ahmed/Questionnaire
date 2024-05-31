@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:doctor/Core/Services/ApiServices.dart';
+import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -52,7 +53,7 @@ class QyalityStandardCubit extends Cubit<QyalityStandardState> {
 
       // Add headers
       request.headers.addAll({
-        "Authorization": "Bearer ${AppConstant.token}",
+        "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
       });
 
       var streamedResponse = await request.send();
