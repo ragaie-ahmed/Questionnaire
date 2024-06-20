@@ -9,4 +9,5 @@ class AppConstant {
   static String? idCourses;
   static bool color=false;
 
+
 }

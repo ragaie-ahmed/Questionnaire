@@ -4,14 +4,9 @@ import 'package:doctor/Features/Presentation/Manager/Courses/courses_cubit.dart'
 import 'package:doctor/Features/Presentation/View/HomeScreen/MainPage/Screens/MainPageBody.dart';
 import 'package:flutter/material.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends StatelessWidget {
   const MainPage({super.key});
 
-  @override
-  State<MainPage> createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
   @override
 
   @override

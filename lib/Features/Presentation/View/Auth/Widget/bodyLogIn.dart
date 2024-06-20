@@ -1,9 +1,7 @@
 import 'package:doctor/Admin/Presenatation/HomeScreen/Screen/HomeScreenBody.dart';
 import 'package:doctor/Core/Services/CacheHelper.dart';
-import 'package:doctor/Core/Util/Const.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
-import 'package:doctor/Features/Presentation/View/Auth/Screens/ForgetPasswordbody.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/MainPage/MainPage.dart';
 import 'package:doctor/Widget/CustomButton.dart';
 import 'package:doctor/Widget/CustomTextFormField.dart';
@@ -150,26 +148,17 @@ class BodyLogIn extends StatelessWidget {
                       SizedBox(
                         height: 40.h,
                       ),
-                      InkWell(
-                        onTap: () {
-                          Navigator.push(context, MaterialPageRoute(
-                            builder: (context) {
-                              return const ForgetPasswordbody();
-                            },
-                          ));
-                        },
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            Strings.forgetPassWord,
-                            style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium
-                                    ?.color,
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.bold),
-                          ),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Text(
+                          Strings.forgetPassWord,
+                          style: TextStyle(
+                              color: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium
+                                  ?.color,
+                              fontSize: 14.sp,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ],

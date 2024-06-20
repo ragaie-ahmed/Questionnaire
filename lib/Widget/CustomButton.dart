@@ -19,7 +19,6 @@ class CustomButton extends StatelessWidget {
       height: 45.h,
       shape: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.r),
-
           borderSide: BorderSide.none
       ),
       color: color ?? Theme
@@ -28,7 +27,6 @@ class CustomButton extends StatelessWidget {
       onPressed: changed,
 
       child: Align(
-
           alignment:alignment??Alignment.center,
           child: Text(text, style: TextStyle(color: colorText ?? Theme
               .of(context)

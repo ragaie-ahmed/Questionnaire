@@ -12,6 +12,7 @@ import 'package:doctor/Features/Presentation/Manager/ChangeTheme/change_theme_cu
 import 'package:doctor/Features/Presentation/Manager/Courses/courses_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/QualityStandard/quality_standard_cubit.dart';
+import 'package:doctor/Features/Presentation/Manager/Quetionnair/quetionnair_cubit.dart';
 import 'package:doctor/Features/Presentation/View/Splash/Screen/Splash_Screen.dart';
 import 'package:doctor/Theme/dark.dart';
 import 'package:doctor/Theme/light.dart';
@@ -29,6 +30,7 @@ void main() async {
   AppConstant.role = CacheHelper.getData(key: "role");
   AppConstant.idCourses = CacheHelper.getData(key: "role");
   print("the id is ${AppConstant.role}");
+  String ahmed="jrfjr";
 
   runApp(const MyApp());
 }
@@ -68,6 +70,8 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) => AddQuestionNaireCubit()..percentage()),
+        BlocProvider(
+            create: (context) => QuetionnairCubit()..getQuestionnaire()),
       ],
       child: BlocBuilder<ChangeThemeCubit, bool>(
         builder: (context, isTheme) {

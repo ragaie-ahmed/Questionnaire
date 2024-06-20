@@ -21,15 +21,12 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    CacheHelper.getData(key: "token") != null
-        ? (AppConstant.role == "prof"
-        ? const MainPage()
-        : const HomeScreenAdmin())
-        : const OnBoarding();
+
     Future.delayed(const Duration(seconds: 3), () {
       return Navigator.pushAndRemoveUntil(
           context, MaterialPageRoute(builder: (context) =>const OnboardingBody(),),(route) => false,);
     },);
+
     super.initState();
   }
 

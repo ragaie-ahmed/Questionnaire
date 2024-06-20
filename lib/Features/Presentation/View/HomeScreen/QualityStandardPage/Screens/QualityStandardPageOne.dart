@@ -93,13 +93,11 @@ class _QualityStandardPageOneState extends State<QualityStandardPageOne> {
 
                               dotColor: Theme
                                   .of(context)
-                                  .colorScheme
-                                  .primary,
+                                  .primaryColor,
 
                               activeDotColor: Theme
                                   .of(context)
-                                  .colorScheme
-                                  .primary
+                                  .primaryColor
 
                           ),
                           controller: pageController, count: 2,),

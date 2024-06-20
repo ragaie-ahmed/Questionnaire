@@ -19,6 +19,7 @@ class _OnboardingBodyState extends State<OnboardingBody> {
     const OnBoardingOne(),
     const OnBoardingTwo(),
   ];
+
   PageController pageController = PageController();
 
   void dispose() {
@@ -31,10 +32,9 @@ class _OnboardingBodyState extends State<OnboardingBody> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-appBar: AppBar(),
+        appBar: AppBar(),
         body: Stack(
           children: [
-
             PageView.builder(
               onPageChanged: (value) {
                 setState(() {
@@ -53,19 +53,19 @@ appBar: AppBar(),
                   children: [
                     currentIndex == pages.length - 1
                         ? SizedBox(
-                      width: 80.w,
-                    )
+                            width: 80.w,
+                          )
                         : SizedBox(
-                      width: 120.w,
-                    ),
+                            width: 120.w,
+                          ),
                     currentIndex == pages.length - 1
                         ? InkWell(
-                        onTap: () {
-                          pageController.previousPage(
-                              duration: const Duration(microseconds: 500),
-                              curve: Curves.ease);
-                        },
-                        child: Image.asset(Images.back))
+                            onTap: () {
+                              pageController.previousPage(
+                                  duration: const Duration(microseconds: 500),
+                                  curve: Curves.ease);
+                            },
+                            child: Image.asset(Images.back))
                         : const Text(""),
                     SizedBox(
                       width: 40.w,
@@ -78,14 +78,14 @@ appBar: AppBar(),
                         onTap: () {
                           currentIndex == pages.length - 1
                               ? Navigator.pushAndRemoveUntil(context,
-                              MaterialPageRoute(
-                                builder: (context) {
-                                  return const LogInScreen();
-                                },
-                              ), (route) => false)
+                                  MaterialPageRoute(
+                                  builder: (context) {
+                                    return const LogInScreen();
+                                  },
+                                ), (route) => false)
                               : pageController.nextPage(
-                              duration: const Duration(microseconds: 500),
-                              curve: Curves.ease);
+                                  duration: const Duration(microseconds: 500),
+                                  curve: Curves.ease);
                         },
                         child: Image.asset(Images.next))
                   ],
@@ -97,23 +97,21 @@ appBar: AppBar(),
                   child: currentIndex == pages.length - 1
                       ? const Text("")
                       : InkWell(
-                    onTap: () {
-                      Navigator.pushAndRemoveUntil(context,
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return const LogInScreen();
-                            },
-                          ), (route) => false);
-                    },
-                    child: Text(
-                        style: TextStyle(
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.bold,
-                            color: Theme
-                                .of(context)
-                                .primaryColor),
-                        Strings.skip),
-                  ),
+                          onTap: () {
+                            Navigator.pushAndRemoveUntil(context,
+                                MaterialPageRoute(
+                              builder: (context) {
+                                return const LogInScreen();
+                              },
+                            ), (route) => false);
+                          },
+                          child: Text(
+                              style: TextStyle(
+                                  fontSize: 20.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).primaryColor),
+                              Strings.skip),
+                        ),
                 ))
           ],
         ));
