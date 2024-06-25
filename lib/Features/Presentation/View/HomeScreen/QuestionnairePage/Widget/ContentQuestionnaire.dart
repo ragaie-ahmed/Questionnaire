@@ -36,7 +36,7 @@ class ContentQuestionnaireTwo extends StatelessWidget {
          SizedBox(
            height: MediaQuery.of(context).size.height*.65,
            child: ListView.builder(
-             itemCount: cubuit.questionnaire!.percentages!.isEmpty?5:cubuit.questionnaire!.percentages!.length ,
+             itemCount: cubuit.questionnaire?.percentages?.length ??0,
              shrinkWrap: true,
              physics: BouncingScrollPhysics(),
              itemBuilder: (context, index) {

@@ -1,4 +1,5 @@
 import 'package:doctor/Admin/Data/QualityStandard/qyality_standard_cubit.dart';
+import 'package:doctor/Admin/Presenatation/HomeScreen/Screen/HomeScreenBody.dart';
 import 'package:doctor/Admin/Presenatation/QualityStandard/Widget/addstandardName.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/AppBarQualityStandard.dart';
@@ -12,15 +13,25 @@ class AddQualityStandardAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var cubit = QyalityStandardCubitAdmin.get(context);
+
     return Scaffold(
-      body: BlocConsumer<QyalityStandardCubit, QyalityStandardState>(
+
+    body: BlocConsumer<QyalityStandardCubitAdmin, QyalityStandardStateAdmin>(
         listener: (context, state) {
-          if(state is StandardSuccess){
-            Navigator.pop(context);
+          if (state is StandardAdminSuccess) {
+            Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const HomeScreenAdmin();
+                },
+              ),
+              (route) => false,
+            );
           }
         },
         builder: (context, state) {
-          var cubit = QyalityStandardCubit.get(context);
           return Form(
             key: cubit.formKey,
             child: SafeArea(
@@ -46,7 +57,7 @@ class AddQualityStandardAdmin extends StatelessWidget {
                         AddStandardNameQuestion(
                           textEditingController: cubit.nameController,
                           validate: (p0) {
-                            if(p0!.isEmpty){
+                            if (p0!.isEmpty) {
                               return "please enter name course";
                             }
                             return null;
@@ -83,7 +94,7 @@ class AddQualityStandardAdmin extends StatelessWidget {
                         ),
                         AddStandardNameQuestion(
                           validate: (p0) {
-                            if(p0!.isEmpty){
+                            if (p0!.isEmpty) {
                               return "please enter desc course";
                             }
                             return null;
@@ -103,14 +114,14 @@ class AddQualityStandardAdmin extends StatelessWidget {
                       width: 296.38.w,
                       height: 50.h,
                       child: CustomButton(
-                        text: state is StandardLoading ?"Loading":"Post",
+                        text: state is StandardLoading ? "Loading" : "Post",
                         changed: () {
-                       if(cubit.formKey.currentState!.validate()){
-                         cubit.addStandard(
-                             name: cubit.nameController.text,
-                             idImageBytes: cubit.imageBytes!,
-                             desc: cubit.descController.text);
-                       }
+                          if (cubit.formKey.currentState!.validate()) {
+                            cubit.addStandard(
+                                name: cubit.nameController.text,
+                                idImageBytes: cubit.imageBytes!,
+                                desc: cubit.descController.text);
+                          }
                         },
                       )),
                 ],

@@ -40,21 +40,21 @@ class ContentQuestion extends StatelessWidget {
                 text: "Add Questionnaire",
               ),
             ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return   AddQuestion();
-                  },
-                ));
-              },
-              child:ContainerContent(
-                color: Theme.of(context).colorScheme.primary,
-                colorText: Theme.of(context).primaryColor,
-                imageUrl: Images.addStandard,
-                text: "View Results",
-              ),
-            ),
+            // InkWell(
+            //   onTap: () {
+            //     Navigator.push(context, MaterialPageRoute(
+            //       builder: (context) {
+            //         return   AddQuestion();
+            //       },
+            //     ));
+            //   },
+            //   child:ContainerContent(
+            //     color: Theme.of(context).colorScheme.primary,
+            //     colorText: Theme.of(context).primaryColor,
+            //     imageUrl: Images.addStandard,
+            //     text: "View Results",
+            //   ),
+            // ),
           ],
         ),
       ),

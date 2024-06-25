@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
             ..getReportData(CacheHelper.getData(key: "idReport") ?? 6),
         ),
         BlocProvider(
-          create: (context) => QyalityStandardCubit(),
+          create: (context) => QyalityStandardCubitAdmin()..getQualityStandard(),
         ),
         BlocProvider(
           create: (context) => ChangeThemeCubit(),
@@ -82,7 +82,7 @@ class MyApp extends StatelessWidget {
             builder: (_, child) {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
-                theme: isTheme ? light : dark,
+                theme: isTheme ? dark : light,
                 home:
                 CacheHelper.getData(key: "role") != null
                     ? (CacheHelper.getData(key: "role") == "prof"

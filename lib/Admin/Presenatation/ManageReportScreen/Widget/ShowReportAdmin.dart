@@ -18,7 +18,7 @@ class ShowReportAdmin extends StatelessWidget {
       listener: (context, state) {},
       builder: (context, state) {
         if (state is ManageReportSuccess) {
-          return ListView.separated(
+          return  ListView.separated(
             itemBuilder: (context, index) {
               return InkWell(
                 onTap: () {
@@ -74,7 +74,12 @@ class ShowReportAdmin extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
           );
         }
-        return const Text("");
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Center(child: CircularProgressIndicator(color: Colors.blueGrey,)),
+          ],
+        );
       },
     );
   }
