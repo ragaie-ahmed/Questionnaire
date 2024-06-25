@@ -1,3 +1,4 @@
+import 'package:doctor/Admin/Presenatation/QualityStandard/View/QualityStandardAdmin.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/QualityStandard.dart';
@@ -46,7 +47,7 @@ class CardHomeScreen extends StatelessWidget {
                     text: Strings.letsGo,
                     changed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) {
-                        return const QualityStandard();
+                        return const QualityStandardAdmin();
                       },));
                     },
                   ),

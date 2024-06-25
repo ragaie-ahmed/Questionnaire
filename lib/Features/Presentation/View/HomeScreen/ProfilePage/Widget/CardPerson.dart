@@ -1,3 +1,4 @@
+import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +48,7 @@ class CardPerson extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 2, left: 100),
                   child: Text(
-                    Strings.department,
+                 CacheHelper.getData(key: "role")=="prof"?  Strings.department:"Admin - IT ",
                     style: TextStyle(
                         color: Theme.of(context).colorScheme.primary,
                         fontSize: 18),
