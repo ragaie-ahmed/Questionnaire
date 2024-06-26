@@ -249,7 +249,9 @@ class _QualityStandardPageOneState extends State<ViewQualityStandardAdmin> {
                 const Positioned(
                   top: 50,
                   left: 5,
-                  child: AppBarQualityStandard(),
+                  child: AppBarQualityStandard(
+                     text:  Strings.qualityStandards
+                  ),
                 ),
               ],
             );

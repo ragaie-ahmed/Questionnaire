@@ -2,6 +2,7 @@ import 'package:doctor/Admin/Data/QualityStandard/qyality_standard_cubit.dart';
 import 'package:doctor/Admin/Presenatation/HomeScreen/Screen/HomeScreenBody.dart';
 import 'package:doctor/Admin/Presenatation/QualityStandard/Widget/addstandardName.dart';
 import 'package:doctor/Core/Util/Images.dart';
+import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/AppBarQualityStandard.dart';
 import 'package:doctor/Widget/CustomButton.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,9 @@ class AddQualityStandardAdmin extends StatelessWidget {
                   SizedBox(
                     height: 20.h,
                   ),
-                  const AppBarQualityStandard(),
+                  const AppBarQualityStandard(
+                    text: Strings.qualityStandards,
+                  ),
                   SizedBox(
                     height: 30.h,
                   ),

@@ -26,6 +26,7 @@ class _ViewStandardsState extends State<ViewStandardQualityBody> {
               height: 20,
             ),
             AppBarQualityStandard(
+              text: Strings.qualityStandards,
               color: Theme.of(context).colorScheme.primary,
               colorIcon: Theme.of(context).colorScheme.primary,
             ),

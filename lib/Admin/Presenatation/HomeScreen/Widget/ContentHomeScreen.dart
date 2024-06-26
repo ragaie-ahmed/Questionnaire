@@ -1,4 +1,5 @@
 import 'package:doctor/Admin/Data/ManageCourse/manage_courses_cubit.dart';
+import 'package:doctor/Admin/Presenatation/Advertisement/Advertisement.dart';
 import 'package:doctor/Admin/Presenatation/ManageCourse/Screens/ManageCourseScreen.dart';
 import 'package:doctor/Admin/Presenatation/ManageReportScreen/Screen/ManageReport.dart';
 import 'package:doctor/Admin/Presenatation/QualityStandard/View/QualityStandardAdmin.dart';
@@ -98,7 +99,7 @@ class ContentHomeScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                 builder: (context) {
-                  return const ScheduleOne();
+                  return const Advertisement();
                 },
               ));
             },

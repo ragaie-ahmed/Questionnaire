@@ -130,7 +130,9 @@ class _QualityStandardPageOneState extends State<QualityStandardPageOne> {
                 const Positioned(
                   top: 50,
                   left: 5,
-                  child: AppBarQualityStandard(),
+                  child: AppBarQualityStandard(
+                    text: Strings.qualityStandards,
+                  ),
                 ),
               ],
             );

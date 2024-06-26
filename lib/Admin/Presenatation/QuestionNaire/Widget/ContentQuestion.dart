@@ -19,6 +19,7 @@ class ContentQuestion extends StatelessWidget {
               height: 20,
             ),
             AppBarQualityStandard(
+              text: "Questionnaire",
               color: Theme.of(context).colorScheme.primary,
               colorIcon: Theme.of(context).colorScheme.primary,
             ),

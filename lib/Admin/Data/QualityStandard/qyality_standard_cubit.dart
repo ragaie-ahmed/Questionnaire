@@ -50,13 +50,10 @@ class QyalityStandardCubitAdmin extends Cubit<QyalityStandardStateAdmin> {
         await http.MultipartFile.fromPath('image', idImageBytes.path);
         request.files.add(imageFile);
 
-
-
       // Add headers
       request.headers.addAll({
         "Authorization": "Bearer ${CacheHelper.getData(key: "token")}",
       });
-
       var streamedResponse = await request.send();
       var response = await http.Response.fromStream(streamedResponse);
 

@@ -32,6 +32,7 @@ class AddQuestion extends StatelessWidget {
                     height: 25.h,
                   ),
                   AppBarQualityStandard(
+                    text: "Questionnaire",
                     color: Theme.of(context).primaryColor,
                     colorIcon: Theme.of(context).primaryColor,
                   ),
