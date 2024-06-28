@@ -24,19 +24,29 @@ class CardQuestionnaire extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              textOne,
-              style: TextStyle(
-                  color: colorText,
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.bold),
+            SizedBox(
+              width: MediaQuery.of(context).size.width*.3,
+              child: Text(
+                textOne,
+                style: TextStyle(
+                    overflow: TextOverflow.ellipsis,
+
+                    color: colorText,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            Text(
-              textTwo,
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.sp,
-                  color: colorText),
+            SizedBox(
+              width: MediaQuery.of(context).size.width*.3,
+
+              child: Text(
+                textTwo,
+                style: TextStyle(
+                  overflow: TextOverflow.ellipsis,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.sp,
+                    color: colorText),
+              ),
             ),
           ],
         ),

@@ -18,6 +18,7 @@ class LogInCubit extends Cubit<LogInState> {
     required String email,
     required String passWord,
   }) async {
+    emit(LoadingLogIn());
     try {
       http.Response response =
           await http.post(Uri.parse(AppConstant.logIn), body: {

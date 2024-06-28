@@ -17,10 +17,11 @@ class AddQuestionNaireCubit extends Cubit<AddQuestionNaireState> {
   static AddQuestionNaireCubit get(context) => BlocProvider.of(context);
   TextEditingController questionController = TextEditingController();
   TextEditingController answerController = TextEditingController();
-  GlobalKey<FormState> globalKey=GlobalKey();
-  bool isShow=false;
-  void changeTextForm(){
-    isShow=!isShow;
+  GlobalKey<FormState> globalKey = GlobalKey();
+  bool isShow = false;
+
+  void changeTextForm() {
+    isShow = !isShow;
     emit(SuccessChange());
   }
 
@@ -61,7 +62,7 @@ class AddQuestionNaireCubit extends Cubit<AddQuestionNaireState> {
       http.Response response = await http.post(
           Uri.parse("${AppConstant.baseUrl}/quetionnair/admin/choices/store"),
           body: {
-            "question_id":  CacheHelper.getData(key: "idPercentage").toString(),
+            "question_id": CacheHelper.getData(key: "idPercentage").toString(),
             "choices[]": answer
           },
           headers: {

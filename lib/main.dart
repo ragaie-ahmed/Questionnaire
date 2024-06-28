@@ -13,7 +13,12 @@ import 'package:doctor/Features/Presentation/Manager/Courses/courses_cubit.dart'
 import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/QualityStandard/quality_standard_cubit.dart';
 import 'package:doctor/Features/Presentation/Manager/Quetionnair/quetionnair_cubit.dart';
+import 'package:doctor/Features/Presentation/View/OnBoarding/OnBoarding.dart';
 import 'package:doctor/Features/Presentation/View/Splash/Screen/Splash_Screen.dart';
+import 'package:doctor/Student/Data/Complmaint/complmaint_cubit.dart';
+import 'package:doctor/Student/Data/Courses/courses_cubit.dart';
+import 'package:doctor/Student/Data/QualityStandardStudent/quality_standard_student_cubit.dart';
+import 'package:doctor/Student/Presentation/HomeStrudent/Screens/HomeScreensStrudent.dart';
 import 'package:doctor/Theme/dark.dart';
 import 'package:doctor/Theme/light.dart';
 import 'package:flutter/material.dart';
@@ -59,10 +64,16 @@ class MyApp extends StatelessWidget {
           create: (context) => QyalityStandardCubitAdmin()..getQualityStandard(),
         ),
         BlocProvider(
+          create: (context) => CoursesStudentCubit()..getCoursesStudent(),
+        ),
+        BlocProvider(
           create: (context) => ChangeThemeCubit(),
         ),
         BlocProvider(
           create: (context) => QualityStandardCubit()..getQualityStandard(),
+        ),
+        BlocProvider(
+          create: (context) => QualityStandardStudentCubit()..getQualityStandard(),
         ),
         BlocProvider(
           create: (context) => CoursesCubit()
@@ -70,6 +81,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
             create: (context) => AddQuestionNaireCubit()..percentage()),
+
         BlocProvider(
             create: (context) => QuetionnairCubit()..getQuestionnaire()),
       ],
@@ -87,8 +99,9 @@ class MyApp extends StatelessWidget {
                 CacheHelper.getData(key: "role") != null
                     ? (CacheHelper.getData(key: "role") == "prof"
                         ? const MainPage()
-                        : const HomeScreenAdmin())
+                        : CacheHelper.getData(key: "role")=="admin" ?const HomeScreenAdmin():const Homescreensstrudent())
                     : const SplashScreen(),
+                // home:const Homescreensstrudent() ,
 
               );
             },

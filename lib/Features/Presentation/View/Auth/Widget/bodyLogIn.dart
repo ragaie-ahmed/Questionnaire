@@ -3,6 +3,7 @@ import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/Manager/LoginCubit/log_in_cubit.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/MainPage/MainPage.dart';
+import 'package:doctor/Student/Presentation/HomeStrudent/Screens/HomeScreensStrudent.dart';
 import 'package:doctor/Widget/CustomButton.dart';
 import 'package:doctor/Widget/CustomTextFormField.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,10 @@ class BodyLogIn extends StatelessWidget {
          CacheHelper.getData(key: "role")=="prof"? Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
            builder: (context) {
              return const MainPage();
+           },
+         ),(route) => false,):CacheHelper.getData(key: "role")=="student"?Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+           builder: (context) {
+             return const Homescreensstrudent();
            },
          ),(route) => false,):Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
            builder: (context) {
@@ -137,8 +142,8 @@ class BodyLogIn extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      CustomButton(
-                        text: Strings.logIn,
+                   CustomButton(
+                        text: state is LoadingLogIn?"Loading.." :Strings.logIn,
                         changed: () {
                           LogInCubit.get(context).logIn(
                               email: emailController.text,
