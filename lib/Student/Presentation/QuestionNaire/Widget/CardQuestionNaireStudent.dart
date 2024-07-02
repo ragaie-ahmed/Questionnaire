@@ -1,3 +1,4 @@
+import 'package:doctor/Student/Presentation/QuestionNaire/Screens/ViewQuestion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -22,9 +23,17 @@ class CardQuestionNaireStudent extends StatelessWidget {
                   fontSize: 20.sp,
                   fontWeight: FontWeight.bold),
               "Hey ..\nWe have some Questions \nfor you.."),
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           GestureDetector(
-
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return  ViewquestionStudent();
+                },
+              ));
+            },
             child: Container(
               width: 268.91.w,
               height: 45.92.h,

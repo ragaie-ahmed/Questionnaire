@@ -16,10 +16,10 @@ class _SmoothingState extends State<Smoothing> {
   Widget build(BuildContext context) {
     return SmoothPageIndicator(
       effect:  SlideEffect(
-          spacing: 8.0,
+          spacing: 6.0,
           radius: 15.0.r,
-          dotWidth: 18.0.w,
-          dotHeight: 18.0.h,
+          dotWidth: 16.0.w,
+          dotHeight: 16.0.h,
           paintStyle: PaintingStyle.stroke,
           strokeWidth: 1.5.w,
 

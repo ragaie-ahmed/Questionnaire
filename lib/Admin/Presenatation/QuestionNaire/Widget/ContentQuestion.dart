@@ -1,4 +1,5 @@
 import 'package:doctor/Admin/Presenatation/QuestionNaire/Screens/AddQuestion.dart';
+import 'package:doctor/Admin/Presenatation/QuestionNaire/Screens/ViewQuestionnaire.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage/Widget/AppBarQualityStandard.dart';
@@ -41,21 +42,21 @@ class ContentQuestion extends StatelessWidget {
                 text: "Add Questionnaire",
               ),
             ),
-            // InkWell(
-            //   onTap: () {
-            //     Navigator.push(context, MaterialPageRoute(
-            //       builder: (context) {
-            //         return   AddQuestion();
-            //       },
-            //     ));
-            //   },
-            //   child:ContainerContent(
-            //     color: Theme.of(context).colorScheme.primary,
-            //     colorText: Theme.of(context).primaryColor,
-            //     imageUrl: Images.addStandard,
-            //     text: "View Results",
-            //   ),
-            // ),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return   QuestionnaireBodyTwoAdmin();
+                  },
+                ));
+              },
+              child:ContainerContent(
+                color: Theme.of(context).colorScheme.primary,
+                colorText: Theme.of(context).primaryColor,
+                imageUrl: Images.addStandard,
+                text: "View Results",
+              ),
+            ),
           ],
         ),
       ),

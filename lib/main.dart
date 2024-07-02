@@ -1,8 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:doctor/Admin/Data/AddQuestionNaire/add_question_naire_cubit.dart';
+import 'package:doctor/Admin/Data/AddQuestionNaire/question_naire_cubit.dart';
 import 'package:doctor/Admin/Data/ManageCourse/manage_courses_cubit.dart';
 import 'package:doctor/Admin/Data/ManageReport/manage_report_cubit.dart';
 import 'package:doctor/Admin/Data/QualityStandard/qyality_standard_cubit.dart';
+import 'package:doctor/Admin/Data/ReportData/report_data_cubit.dart';
+import 'package:doctor/Admin/Data/ilos/ilos_cubit.dart';
 import 'package:doctor/Admin/Presenatation/HomeScreen/Screen/HomeScreenBody.dart';
 import 'package:doctor/Core/Services/CacheHelper.dart';
 import 'package:doctor/Core/Util/Bloc_observ.dart';
@@ -18,6 +21,7 @@ import 'package:doctor/Features/Presentation/View/Splash/Screen/Splash_Screen.da
 import 'package:doctor/Student/Data/Complmaint/complmaint_cubit.dart';
 import 'package:doctor/Student/Data/Courses/courses_cubit.dart';
 import 'package:doctor/Student/Data/QualityStandardStudent/quality_standard_student_cubit.dart';
+import 'package:doctor/Student/Data/QuestionnaireStudent/questionnaire_cubit.dart';
 import 'package:doctor/Student/Presentation/HomeStrudent/Screens/HomeScreensStrudent.dart';
 import 'package:doctor/Theme/dark.dart';
 import 'package:doctor/Theme/light.dart';
@@ -73,6 +77,9 @@ class MyApp extends StatelessWidget {
           create: (context) => QualityStandardCubit()..getQualityStandard(),
         ),
         BlocProvider(
+          create: (context) => IlosCubit()..getIlos(),
+        ),
+        BlocProvider(
           create: (context) => QualityStandardStudentCubit()..getQualityStandard(),
         ),
         BlocProvider(
@@ -84,6 +91,12 @@ class MyApp extends StatelessWidget {
 
         BlocProvider(
             create: (context) => QuetionnairCubit()..getQuestionnaire()),
+        BlocProvider(
+            create: (context) => QuetionnairCubitAdmin()..getQuestionnaire()),
+        BlocProvider(
+            create: (context) => QuestionnaireStudentCubit()),
+        BlocProvider(
+            create: (context) => ReportDataCubit()..getReport()),
       ],
       child: BlocBuilder<ChangeThemeCubit, bool>(
         builder: (context, isTheme) {

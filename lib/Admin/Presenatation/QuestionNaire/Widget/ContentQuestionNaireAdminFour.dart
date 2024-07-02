@@ -1,4 +1,5 @@
 import 'package:doctor/Admin/Data/ReportData/report_data_cubit.dart';
+import 'package:doctor/Admin/Presenatation/QuestionNaire/Widget/ContentQuestion.dart';
 import 'package:doctor/Core/Util/Images.dart';
 import 'package:doctor/Core/Util/String.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/QuestionnairePage/Screens/QuestionnaireBody.dart';
@@ -6,15 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ContentQuestionnaireFour extends StatefulWidget {
-  const ContentQuestionnaireFour({super.key});
+class ContentQuestionnaireFourAdmin extends StatefulWidget {
+  const ContentQuestionnaireFourAdmin({super.key});
 
   @override
-  State<ContentQuestionnaireFour> createState() =>
+  State<ContentQuestionnaireFourAdmin> createState() =>
       _ContentQuestionnaireFourState();
 }
 
-class _ContentQuestionnaireFourState extends State<ContentQuestionnaireFour> {
+class _ContentQuestionnaireFourState extends State<ContentQuestionnaireFourAdmin> {
   @override
   Widget build(BuildContext context) {
     double _sliderValue = 0.6;
@@ -37,10 +38,10 @@ class _ContentQuestionnaireFourState extends State<ContentQuestionnaireFour> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const QuestionnaireBodyOne();
+                          return const ContentQuestion();
                         },
                       ),
-                      (route) => false,
+                          (route) => false,
                     );
                   },
                   child: Image.asset(
@@ -66,7 +67,7 @@ class _ContentQuestionnaireFourState extends State<ContentQuestionnaireFour> {
               child: Container(
                 padding: EdgeInsets.all(15.r),
                 decoration:
-                    BoxDecoration(color: Theme.of(context).primaryColor),
+                BoxDecoration(color: Theme.of(context).primaryColor),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,19 +146,19 @@ class CustomThumbShape extends SliderComponentShape {
 
   @override
   void paint(
-    PaintingContext context,
-    Offset center, {
-    Animation<double>? activationAnimation,
-    Animation<double>? enableAnimation,
-    bool? isDiscrete,
-    TextPainter? labelPainter,
-    RenderBox? parentBox,
-    SliderThemeData? sliderTheme,
-    TextDirection? textDirection,
-    double? value,
-    double? textScaleFactor,
-    Size? sizeWithOverflow,
-  }) {
+      PaintingContext context,
+      Offset center, {
+        Animation<double>? activationAnimation,
+        Animation<double>? enableAnimation,
+        bool? isDiscrete,
+        TextPainter? labelPainter,
+        RenderBox? parentBox,
+        SliderThemeData? sliderTheme,
+        TextDirection? textDirection,
+        double? value,
+        double? textScaleFactor,
+        Size? sizeWithOverflow,
+      }) {
     final Canvas canvas = context.canvas;
 
     final Paint paint = Paint()

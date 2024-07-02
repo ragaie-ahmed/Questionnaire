@@ -28,7 +28,9 @@ class _ViewCourseByIndexState extends State<ViewResultReport> {
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ManageReportCubit, ManageReportState>(
-      listener: (context, state) {},
+      listener: (context, state) {
+
+      },
       builder: (context, state) {
         if (state is ManageReportSuccessShow) {
           return Container(

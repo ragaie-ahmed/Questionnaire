@@ -10,12 +10,12 @@ class OnBoardingOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding:  EdgeInsets.only(right: 2.w,left: 2.w),
+      padding:  EdgeInsets.only(right: 4.w,left: 4.w),
       child:  ContentBody(image: Images.onBoardingOne,
       color: Theme.of(context).colorScheme.primary,
         text: Strings.onBoarding1,
         fontWeight: FontWeight.bold,
-        fontSize: 22.sp,
+        fontSize: 18.sp,
 
       ),
     );

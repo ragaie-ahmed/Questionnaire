@@ -40,6 +40,7 @@ class _QualityStandardPageOneState extends State<ViewQualityStandardStudent> {
               alignment: Alignment.bottomCenter,
               children: [
                 PageView.builder(
+
                   onPageChanged: (value) {
                     setState(() {
                       currentIndex = value;

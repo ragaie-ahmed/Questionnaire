@@ -5,6 +5,7 @@ import 'package:doctor/Features/Presentation/View/HomeScreen/QualityStandardPage
 import 'package:doctor/Features/Presentation/View/HomeScreen/QuestionnairePage/Screens/QuestionnaireBody.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/ReportPage/Screens/ReportOne.dart';
 import 'package:doctor/Features/Presentation/View/HomeScreen/SchedulePage/Screens/ScheduleOne.dart';
+import 'package:doctor/Features/Presentation/View/IlosDoctor/Screens/IlosScreenHomeDoctor.dart';
 import 'package:doctor/Widget/ContainerCard.dart';
 import 'package:flutter/material.dart';
 
@@ -13,80 +14,98 @@ class ContentMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const QuestionnaireBodyOne();
-              },
-            ));
-          },
-          child: ContainerContent(
-              text: Strings.viewQuestionnaires,
-              imageUrl: Images.question,
-              color: Theme.of(context).cardColor,
-              colorText: Theme.of(context).primaryColor),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const CoursesOne();
-              },
-            ));
-          },
-          child: ContainerContent(
-              text: Strings.addaCourse,
-              imageUrl: Images.addCourse,
-              color: Theme.of(context).cardColor,
-              colorText: Theme.of(context).primaryColor),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const ReportOne();
-              },
-            ));
-          },
-          child: ContainerContent(
-              text: Strings.addaReport,
-              imageUrl: Images.addReport,
-              color: Theme.of(context).cardColor,
-              colorText: Theme.of(context).primaryColor),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const QualityStandard();
-              },
-            ));
-          },
-          child: ContainerContent(
-              text: Strings.qualityStandards,
-              imageUrl: Images.qualityStandards,
-              color: Theme.of(context).cardColor,
-              colorText: Theme.of(context).primaryColor),
-        ),
-        InkWell(
-          onTap: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return const ScheduleOne();
-              },
-            ));
-          },
-          child: ContainerContent(
-            text: Strings.academicSchedules,
-            imageUrl: Images.schedule,
-            color: Theme.of(context).cardColor,
-            colorText: Theme.of(context).primaryColor,
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const QuestionnaireBodyOne();
+                },
+              ));
+            },
+            child: ContainerContent(
+                text: Strings.viewQuestionnaires,
+                imageUrl: Images.question,
+                color: Theme.of(context).cardColor,
+                colorText: Theme.of(context).primaryColor),
           ),
-        ),
-      ],
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const CoursesOne();
+                },
+              ));
+            },
+            child: ContainerContent(
+                text: Strings.addaCourse,
+                imageUrl: Images.addCourse,
+                color: Theme.of(context).cardColor,
+                colorText: Theme.of(context).primaryColor),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const ReportOne();
+                },
+              ));
+            },
+            child: ContainerContent(
+                text: Strings.addaReport,
+                imageUrl: Images.addReport,
+                color: Theme.of(context).cardColor,
+                colorText: Theme.of(context).primaryColor),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const QualityStandard();
+                },
+              ));
+            },
+            child: ContainerContent(
+                text: Strings.qualityStandards,
+                imageUrl: Images.qualityStandards,
+                color: Theme.of(context).cardColor,
+                colorText: Theme.of(context).primaryColor),
+          ),
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const ScheduleOne();
+                },
+              ));
+            },
+            child: ContainerContent(
+              text: Strings.academicSchedules,
+              imageUrl: Images.schedule,
+              color: Theme.of(context).cardColor,
+              colorText: Theme.of(context).primaryColor,
+            ),
+          ),
+      
+          InkWell(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return const IlosStudentScreenStudent();
+                },
+              ));
+            },
+            child: ContainerContent(
+              text: "Learning Outcomes",
+              imageUrl: Images.schedule,
+              color: Theme.of(context).cardColor,
+              colorText: Theme.of(context).primaryColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

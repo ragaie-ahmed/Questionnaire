@@ -17,14 +17,16 @@ class MainPageBody extends StatelessWidget {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body:const SafeArea(
-        child: Column(
-          children: [
-       SizedBox(height: 30,),
-            AppBarBody(),
-            CardMainPage(),
-            ContentMain()
-
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+                 SizedBox(height: 30,),
+              AppBarBody(),
+              CardMainPage(),
+              ContentMain()
+          
+            ],
+          ),
         ),
       ),
     );

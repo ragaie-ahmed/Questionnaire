@@ -40,7 +40,7 @@ class _ViewCourseByIndexState extends State<ViewCourseByIndexStudent> {
                 child: Align(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      state.coursesModel.academicYear.toString(),
+                      state.coursesModel.academicYear==null?"": state.coursesModel.academicYear.toString(),
                       style: TextStyle(
                           color: Theme
                               .of(context)
